@@ -27,4 +27,8 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../Public/quiz.html"));
   });
 
+  app.get("/home", function(req, res) {
+    res.sendFile(path.join(__dirname, "../Public/home.html"));
+  });
+
 };
