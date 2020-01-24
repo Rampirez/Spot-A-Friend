@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+  <title>Test</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+</head>
+<body>
+  <div class="container pt-5">
+    <div class="card">
+      <div class="card-header">Login</div>
+      <div class="card-body">
+        <% if (errorMessage.length > 0) { %>
+          <div class="alert alert-danger"><%= errorMessage %></div>
+        <% } %>
+        <% if (successMessage.length > 0) { %>
+          <div class="alert alert-success"><%= successMessage %></div>
+        <% } %>
+        <form action="/login" method="post">
+          <div class="form-group">
+            <label>Username</label>
+            <input type="text" class="form-control" name="username">
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" class="form-control" name="password">
+          </div>
+          <button type="submit" class="btn btn-warning btn-lg">Login</button>
+        </form>
+        <hr>
+        <p>Need an account? <a href="/register">Signup</a></p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
