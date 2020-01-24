@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+
+    <div class="container">
+  
+        <h2>Survey Questions</h2>
+        <hr>
+    
+        <h3><strong>About You</strong></h3>
+        <h4>Name (Required)</h4>
+        <input type="text" id="name" class="form-control" required="">
+    
+        <h4>Link to Photo Image (Required)</h4>
+        <input type="text" id="photo" class="form-control" required="">
+    
+        <hr>
+    
+        <h3><strong>Question 1</strong></h3>
+        <h4>You are OBSESSED with Anime.</h4>
+        <select class="select" id="genreQ">
+        </select>
+
+        </div>
+
+    <script>
+      var genres = [
+          "",
+        "acoustic",
+        "afrobeat",
+        "alt-rock",
+        "alternative",
+        "ambient",
+        "anime",
+        "black-metal",
+        "bluegrass",
+        "blues",
+        "bossanova",
+        "brazil",
+        "breakbeat",
+        "british",
+        "cantopop",
+        "chicago-house",
+        "children",
+        "chill",
+        "classical",
+        "club",
+        "comedy",
+        "country",
+        "dance",
+        "dancehall",
+        "death-metal",
+        "deep-house",
+        "detroit-techno",
+        "disco",
+        "disney",
+        "drum-and-bass",
+        "dub",
+        "dubstep",
+        "edm",
+        "electro",
+        "electronic",
+        "emo",
+        "folk",
+        "forro",
+        "french",
+        "funk",
+        "garage",
+        "german",
+        "gospel",
+        "goth",
+        "grindcore",
+        "groove",
+        "grunge",
+        "guitar",
+        "happy",
+        "hard-rock",
+        "hardcore",
+        "hardstyle",
+        "heavy-metal",
+        "hip-hop",
+        "holidays",
+        "honky-tonk",
+        "house",
+        "idm",
+        "indian",
+        "indie",
+        "indie-pop",
+        "industrial",
+        "iranian",
+        "j-dance",
+        "j-idol",
+        "j-pop",
+        "j-rock",
+        "jazz",
+        "k-pop",
+        "kids",
+        "latin",
+        "latino",
+        "malay",
+        "mandopop",
+        "metal",
+        "metal-misc",
+        "metalcore",
+        "minimal-techno",
+        "movies",
+        "mpb",
+        "new-age",
+        "new-release",
+        "opera",
+        "pagode",
+        "party",
+        "philippines-opm",
+        "piano",
+        "pop",
+        "pop-film",
+        "post-dubstep",
+        "power-pop",
+        "progressive-house",
+        "psych-rock",
+        "punk",
+        "punk-rock",
+        "r-n-b",
+        "rainy-day",
+        "reggae",
+        "reggaeton",
+        "road-trip",
+        "rock",
+        "rock-n-roll",
+        "rockabilly",
+        "romance",
+        "sad",
+        "salsa",
+        "samba",
+        "sertanejo",
+        "show-tunes",
+        "singer-songwriter",
+        "ska",
+        "sleep",
+        "songwriter",
+        "soul",
+        "soundtracks",
+        "spanish",
+        "study",
+        "summer",
+        "swedish",
+        "synth-pop",
+        "tango",
+        "techno",
+        "trance",
+        "trip-hop",
+        "turkish",
+        "work-out",
+        "world-music"
+      ];
+      var option = "";
+      for (var i = 0; i < genres.length; i++) {
+        option +=
+          '<option value="' + genres[i] + '">' + genres[i] + "</option>";
+      }
+      $("#genreQ").append(option);
+    </script>
+  </body>
+</html>
