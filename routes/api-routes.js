@@ -15,15 +15,15 @@ module.exports = function(app) {
   app.get("/spotAFriends/posts", function(req, res) {
     // Write code here to retrieve all of the todos from the database and res.json them
     // back to the user
-    db.Posts.findAll().then(function(data) {
+    db.Post.findAll({ order: [['createdAt', 'ASC']]}).then(function(data) {
       res.json(data);
     });
-  });
+  }); 
 
   app.get("/spotAFriend/posts/:userID", function(req, res) {
     // Add sequelize code to find all posts where the category is equal to req.params.category,
     // return the result to the user with res.json
-    db.Posts.findAll({
+    db.Post.findAll({
       where: {
         userID: req.params.userID
       }
@@ -36,10 +36,9 @@ module.exports = function(app) {
   app.post("/spotAFriends/posts", function(req, res) {
     // Write code here to create a new todo and save it to the database
     // and then res.json back the new todo to the user
-    db.Posts.create({
+    db.Post.create({
       text: req.body.text,
       username: req.body.username,
-      userID: req.body.userID
     }).then(function(data) {
       res.json(data);
     });
