@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="path/to/font-awesome/css/font-awesome.min.css"
+    />
+    <title>Spot-A-Finder</title>
+  </head>
+  <body class="bg-dark">
+    <div class="container bg-dark">
+      <div class="jumbotron jumbotron-fluid bg-dark">
+        <div class="container">
+          <h4>
+            <span><i class="fab fa-spotify"></i></span>
+          </h4>
+          <h1 class="display-4 font-weight-bold text-success text-center">
+            Spot-A-Profile
+          </h1>
+          <h2 class="text-center text-success font-weight-bold">
+            Create a Spot-A-Profile and find your Spot-A-Friend(s)!!!!
+          </h2>
+        </div>
+      </div>
+    </div>
+    <div class="container bg-dark">
+      <form>
+        <div class="form-group">
+          <label for="exampleUsername" class="h3 font-weight-bold text-success"
+            >Friend Username</label
+          >
+          <input
+            type="text"
+            class="form-control text-dark bg-success font-weight-bold"
+            id="username"
+            placeholder="Username"
+          />
+        </div>
+        <div class="form-group">
+          <label
+            class="h3 text-success font-weight-bold"
+            for="exampleInputPassword1"
+            >Password</label
+          >
+          <input
+            type="password"
+            class="form-control text-dark bg-success font-weight-bold"
+            id="password"
+            placeholder="Password"
+          />
+        </div>
+        <h4 class="h3 text-success font-weight-bold">
+          Link to Photo Image (Required)
+        </h4>
+        <input
+          type="text"
+          id="photo"
+          class="form-control font-weight-bold text-dark bg-success"
+          placeholder="http://yourImageURL.png"
+          required=""
+        />
+        <div class="form-group">
+          <label
+            class="h3 text-success font-weight-bold"
+            for="genderFormControlSelect1"
+            >Gender</label
+          >
+          <select
+            class="form-control font-weight-bold text-dark bg-success"
+            id="gender"
+          >
+            <option placeholder="Gender"></option>
+            <option>Female</option>
+            <option>Male</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <br />
+        <button
+          type="submit"
+          class="h3 btn btn-success btn-lg btn-block text-dark font-weight-bold"
+        >
+          Submit
+        </button>
+      </form>
+      <br />
+    </div>
+  </body>
+</html>
