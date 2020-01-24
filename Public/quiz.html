@@ -25,15 +25,26 @@
         <hr>
     
         <h3><strong>Question 1</strong></h3>
-        <h4>You are OBSESSED with Anime.</h4>
-        <select class="select" id="genreQ">
+        <h4>What is your FAVORITE genre?</h4>
+        <select class="select" id="q1">
+          <option value=""></option>
+          
         </select>
-
-        </div>
+        <h3><strong>Question 2</strong></h3>
+        <h4>What is your 2ND FAVORITE genre?</h4>
+        <select class="select" id="q2">
+          <option value=""></option>
+          
+        </select>
+        <h3><strong>Question 3</strong></h3>
+        <h4>What is your 3RD FAVORITE genre?</h4>
+        <select class="select" id="q3">
+          <option value=""></option>
+          
+        </select>
 
     <script>
       var genres = [
-          "",
         "acoustic",
         "afrobeat",
         "alt-rock",
@@ -166,7 +177,9 @@
         option +=
           '<option value="' + genres[i] + '">' + genres[i] + "</option>";
       }
-      $("#genreQ").append(option);
+      $("#q1").append(option);
+      $("#q2").append(option);
+      $("#q3").append(option);
     </script>
   </body>
 </html>
