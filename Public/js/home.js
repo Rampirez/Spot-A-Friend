@@ -14,24 +14,26 @@ $(document).ready(function() {
       username: currentUser
     };
 
-    console.log(newPost);
-
     submitPost(newPost);
     location.reload();
   });
 
+  //Submits a post to the database
   function submitPost(Post) {
     $.post("/spotAFriends/posts", Post, function() {});
   }
+
+  //Grabs current user info and displays it.
   function getCurrentUserData(username) {
     $.get("/spotAFriends/users/" + username, function(data) {
       if (data) {
-        // If this post exists, prefill our cms forms with its data
         $("#currentUser").text("@" + data[0].username);
-        console.log(data);
+        $("#currentUserInfo").text(data[0].bio);
       }
     });
   }
+
+  //grabs all posts and displays them by appending.
   function getPostData() {
     $.get("/spotAFriends/posts", function(data) {
       if (data) {

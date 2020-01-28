@@ -9,16 +9,16 @@ $(document).ready(function() {
 
     var currentUserInfoCarry = usernameInput;
 
+    
+
     var newUser = {
       username: usernameInput,
       password: passwordInput,
-      photo: photoInput,
+      imageURL: photoInput,
       gender: genderInput,
       bio: bioInput
     };
 
-    console.log(newUser);
-    console.log(usernameInput);
     
     localStorage.setItem('currentUser', currentUserInfoCarry);
 

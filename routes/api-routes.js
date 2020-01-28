@@ -7,22 +7,21 @@
 
 // Requiring our Todo model
 var db = require("../models");
+var bcrypt = require("bcryptjs");
 
 // Routes
 // =============================================================
 module.exports = function(app) {
-  // GET route for getting all of the todos
+  // GET route for getting all posts made by all users from the most recent to least
   app.get("/spotAFriends/posts", function(req, res) {
-    // Write code here to retrieve all of the todos from the database and res.json them
-    // back to the user
-    db.Post.findAll({ order: [['createdAt', 'ASC']]}).then(function(data) {
+    db.Post.findAll({ order: [["createdAt", "ASC"]] }).then(function(data) {
       res.json(data);
     });
-  }); 
+  });
 
+  //GET route for all posts made by a specific user
+  //currently not in use
   app.get("/spotAFriend/posts/:userID", function(req, res) {
-    // Add sequelize code to find all posts where the category is equal to req.params.category,
-    // return the result to the user with res.json
     db.Post.findAll({
       where: {
         userID: req.params.userID
@@ -32,34 +31,59 @@ module.exports = function(app) {
     });
   });
 
-  // POST route for saving a new todo. We can create todo with the data in req.body
+  // POST route for posting a text post. Must be editted to include song posts.
   app.post("/spotAFriends/posts", function(req, res) {
-    // Write code here to create a new todo and save it to the database
-    // and then res.json back the new todo to the user
     db.Post.create({
       text: req.body.text,
-      username: req.body.username,
+      username: req.body.username
     }).then(function(data) {
       res.json(data);
     });
   });
 
+
+  //POST route used for creating a new user
   app.post("/spotAFriends/users", function(req, res) {
-    // Write code here to create a new todo and save it to the database
-    // and then res.json back the new todo to the user
+    //bcryptjs code to hash passwords saved in database
+    //-----------------------------------------------------------
+    var salt = bcrypt.genSaltSync(10);
+    var hashedPassword = bcrypt.hashSync(req.body.password, salt);
+    //-----------------------------------------------------------
     db.Users.create({
       username: req.body.username,
-      password: req.body.password,
-      photo: req.body.photo,
-      gender: req.body.gender
+      password: hashedPassword,
+      imageURL: req.body.imageURL,
+      gender: req.body.gender,
+      bio: req.body.bio
     }).then(function(data) {
       res.json(data);
     });
   });
 
+
+  //GET Route to login from the start page
+  app.get("/spotAFriends/users/:username/:password", function(req, res) {
+    db.Users.findAll({
+      where: {
+        username: req.params.username
+      }
+    }).then(function(data) {
+      // This code compares the hashed password saved in the database.
+      // If the password is correct, it returns a "true" variable in place of
+      // the password.
+      var passwordMatch = bcrypt.compareSync(req.params.password, data[0].password);
+      if (passwordMatch != true){
+        data[0].password = false;
+      }
+      else {
+        data[0].password = true;
+      }
+      res.json(data);
+    });
+  });
+
+  // GET Route to aquire a user using only the username, not password.
   app.get("/spotAFriends/users/:username", function(req, res) {
-    // Add sequelize code to find all posts where the category is equal to req.params.category,
-    // return the result to the user with res.json
     db.Users.findAll({
       where: {
         username: req.params.username
