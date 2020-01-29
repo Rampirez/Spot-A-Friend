@@ -35,7 +35,8 @@ module.exports = function(app) {
   app.post("/spotAFriends/posts", function(req, res) {
     db.Post.create({
       text: req.body.text,
-      username: req.body.username
+      username: req.body.username,
+      spotifyURL: req.body.spotifyURL
     }).then(function(data) {
       res.json(data);
     });
@@ -55,6 +56,26 @@ module.exports = function(app) {
       imageURL: req.body.imageURL,
       gender: req.body.gender,
       bio: req.body.bio
+    }).then(function(data) {
+      res.json(data);
+    });
+  });
+
+  app.post("/spotAFriends/quizAnswers", function(req, res) {
+    db.quizAnswers.create({
+      username: req.body.username,
+      Question1: req.body.Question1,
+      Question2: req.body.Question2,
+      Question3: req.body.Question3,
+      Question4: req.body.Question4,
+      Question5: req.body.Question5,
+      Question6: req.body.Question6,
+      Question7: req.body.Question7,
+      Question8: req.body.Question8,
+      Question9: req.body.Question9,
+      Question10: req.body.Question10,
+      Question11: req.body.Question11,
+      Question12: req.body.Question12
     }).then(function(data) {
       res.json(data);
     });

@@ -1,6 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
     var quizAnswers = sequelize.define("quizAnswers", {
-      userID: DataTypes.INTEGER,
+      username: DataTypes.STRING,
       Question1: DataTypes.STRING,
       Question2: DataTypes.STRING,
       Question3: DataTypes.STRING,
@@ -12,10 +12,7 @@ module.exports = function(sequelize, DataTypes) {
       Question9: DataTypes.STRING,
       Question10: DataTypes.STRING,
       Question11: DataTypes.STRING,
-      Question12: DataTypes.STRING,
-      Question13: DataTypes.STRING,
-      Question14: DataTypes.STRING,
-      Question15: DataTypes.STRING
+      Question12: DataTypes.STRING
     });
     return quizAnswers;
   };

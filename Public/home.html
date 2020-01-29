@@ -18,7 +18,12 @@
   </head>
   <body class="bg-dark">
     <nav class="navbar navbar-light bg-success">
-      <a href="#" style="color: cornsilk;"class="navbar-brand">Spot-A-Friend</a>
+      
+      <a href="/home" style="color: cornsilk;"class="navbar-brand"><img
+        class="float rounded-circle" width="30"
+          src="https://i.imgur.com/XlANBQO.png"
+          alt=""
+        />  Spot-A-Friend</a>
     </nav>
 
     <div class="container-fluid gedf-wrapper">
@@ -95,11 +100,20 @@
                   <div class="py-4"></div>
                 </div>
               </div>
-              <div class="btn-toolbar justify-content-between">
+              <div class="input-group mb-3 float-right">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">https://open.spotify.com/embed/</span>
+                </div>
+                <input type="text" class="form-control" placeholder="track/4VXIryQMWpIdGgYR4TrjT1" id="spotifyURL">
+              </div>
+              <div class="">
                 <div class="btn-group">
                   <button type="submit" class="btn btn-success" id="shareButton">share</button>
+                  <label class="sr-only" for="message">post</label>
+                  
                 </div>
               </div>
+              
             </div>
           </div>
           <!-- Post /////-->

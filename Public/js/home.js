@@ -8,10 +8,12 @@ $(document).ready(function() {
     event.preventDefault();
     var textInput = $("#textInput").val().trim();
     var currentUser = localStorage.getItem("currentUser");
+    var spotifyURLInput = $('#spotifyURL').val().trim();
 
     var newPost = {
       text: textInput,
-      username: currentUser
+      username: currentUser,
+      spotifyURL: spotifyURLInput
     };
 
     submitPost(newPost);
@@ -45,7 +47,9 @@ $(document).ready(function() {
               data[i].createdAt +
               '</div><p class="card-text">' +
               data[i].text +
-              "</p></div></div>"
+              '</p><iframe src=https://open.spotify.com/embed/' + 
+              data[i].spotifyURL + 
+              ' width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></div></div>'
           );
         }
       }
