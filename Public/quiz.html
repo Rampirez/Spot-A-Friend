@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <title>Spot-A-Friend Quiz</title>
+  </head>
+  <body class="bg-dark">
+    <div class="container">
+      <div class="jumbotron jumbotron-fluid bg-dark">
+        <div class="container">
+          <h4><span><i class="fab fa-spotify"></i></span></h4>
+          <h1 class="display-4 font-weight-bold text-success text-center">Spot-A-Quiz</h1>
+          <h2 class="text-center text-success font-weight-bold">Answer a few questions and find your Spot-A-Friend(s)!!!!
+          </h2>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+  
+      <div class="form-group">
+        <label class="h3 text-success font-weight-bold" for="genreSelect1">1. Select your FAVORITE music genre.</label>
+        <select class="form-control font-weight-bold text-dark bg-success" id="q1">
+          <option placeholder="Genre1" id="q1option"></option>
+        </select>
+      </div>
+  
+      <div class="form-group">
+        <label class="h3 text-success font-weight-bold" for="genreSelect2">2.  Select your SECOND FAVORITE music
+          genre.</label>
+        <select class="form-control font-weight-bold text-dark bg-success" id="q2">
+          <option placeholder="Genre2" id="q2option"></option>
+        </select>
+      </div>
+  
+      <div class="form-group">
+        <label class="h3 text-success font-weight-bold" for="genreSelect3">3. Select your THIRD FAVORITE music
+          genre.</label>
+        <select class="form-control font-weight-bold text-dark bg-success" id="q3">
+          <option placeholder="Genre3" id="q3option"></option>
+        </select>
+      </div>
+  
+      <div class="form-group">
+        <label class="h3 text-success font-weight-bold" for="ageSelect2">4. Select your AGE RANGE preference.</label>
+        <select class="form-control font-weight-bold text-dark bg-success" id="q4">
+          <option></option>
+          <option id="ageRange1">No Preference</option>
+          <option id="ageRange2">18 to 30</option>
+          <option id="ageRange3">31 to 40</option>
+          <option id="ageRange4">41 to 50</option>
+          <option id="ageRange5">51 to 60</option>
+          <option id="ageRange6">18 to 40</option>
+          <option id="ageRange7">30 to 50</option>
+          <option id="ageRange8">40 to 60</option>
+          <option id="ageRange9">Greater than 60</option>
+        </select>
+      </div>
+  
+      <div class="form-group">
+        <label class="h3 text-success font-weight-bold" for="edSelect1">5. Select your EDUCATION preference.</label>
+        <select class="form-control font-weight-bold text-dark bg-success" id="q5">
+          <option> </option>
+          <option id="education1">No Preference</option>
+          <option id="education2">Vocational</option>
+          <option id="education3">High School</option>
+          <option id="education4">University</option>
+          <option id="education5">Graduate School</option>
+          <option id="education6">Advanced Degree</option>
+        </select>
+      </div>
+  
+      <div class="form-group">
+        <label class="h3 text-success font-weight-bold" for="occSelect1">6. Select your OCCUPATION preference.</label>
+        <select class="form-control font-weight-bold text-dark bg-success" id="q6">
+          <option> </option>
+          <option id="occupation1">No Preference</option>
+          <option id="occupation2">Education</option>
+          <option id="occupation3">Government</option>
+          <option id="occupation4">Hospitality</option>
+          <option id="occupation5">Manufacturing</option>
+          <option id="occupation6">Science</option>
+          <option id="occupation7">Technology</option>
+        </select>
+      </div>
+  
+      <div class="form-group">
+        <label class="h3 text-success font-weight-bold" for="perSelect1">7. Select PERSONALITY preference.</label>
+        <select class="form-control font-weight-bold text-dark bg-success" id="q7">
+          <option> </option>
+          <option id="person1">No Preference</option>
+          <option id="person2">Introvert</option>
+          <option id="person3">Extrovert</option>
+        </select>
+      </div>
+  
+      <div class="form-group">
+        <label class="h3 text-success font-weight-bold" for="qualSelect1">8. Select the MOST IMPORTANT QUALITY you look for in a Spot-A-Friend.</label>
+        <select class="form-control font-weight-bold text-dark bg-success" id="q8">
+          <option> </option>
+          <option id="quality1">Honest</option>
+          <option id="quality2">Accepting</option>
+          <option id="quality3">Non-Judgemental</option>
+          <option id="quality4">Loyal</option>
+          <option id="quality5">Trustworthy</option>
+          <option id="quality6">Respectful</option>
+        </select>
+      </div>
+  
+      <div class="form-group">
+        <label class="h3 text-success font-weight-bold" for="qualSelect2">9. Select the SECOND MOST IMPORTANT QUALITY you look for in a Spot-A-Friend.</label>
+        <select class="form-control font-weight-bold text-dark bg-success" id="q9">
+          <option> </option>
+          <option id="quality1">Honest</option>
+          <option id="quality2">Accepting</option>
+          <option id="quality3">Non-Judgemental</option>
+          <option id="quality4">Loyal</option>
+          <option id="quality5">Trustworthy</option>
+          <option id="quality6">Respectful</option>
+        </select>
+      </div>
+  
+      <div class="form-group">
+        <label class="h3 text-success font-weight-bold" for="qualSelect3">10. Select the THIRD MOST IMPORTANT QUALITY you look for in a Spot-A-Friend.</label>
+        <select class="form-control font-weight-bold text-dark bg-success" id="q10">
+          <option> </option>
+          <option id="quality1">Honest</option>
+          <option id="quality2">Accepting</option>
+          <option id="quality3">Non-Judgemental</option>
+          <option id="quality4">Loyal</option>
+          <option id="quality5">Trustworthy</option>
+          <option id="quality6">Respectful</option>
+        </select>
+      </div>
+  
+      <div class="form-group">
+        <label class="h3 text-success font-weight-bold" for="methodSelect1">11. Select your FAVORITE METHOD of enjoying music.</label>
+        <select class="form-control font-weight-bold text-dark bg-success" id="q11">
+          <option> </option>
+          <option id="method1">All</option>
+          <option id="method2">Speakers</option>
+          <option id="method3">Speakers Blasting</option>
+          <option id="method4">Ear Buds</option>
+          <option id="method5">Car</option>
+          <option id="method6">Live</option>
+        </select>
+      </div>
+  
+      <div class="form-group">
+        <label class="h3 text-success font-weight-bold" for="methodSelect2">12. Select your SECOND FAVORITE METHOD of enjoying music.</label>
+        <select class="form-control font-weight-bold text-dark bg-success" id="q12">
+          <option> </option>
+          <option id="method1">All</option>
+          <option id="method2">Speakers</option>
+          <option id="method3">Speakers Blasting</option>
+          <option id="method4">Ear Buds</option>
+          <option id="method5">Car</option>
+          <option id="method6">Live</option>
+        </select>
+      </div>
+      <br>
+      <button id="submitQuiz" type="submit" class="h3 btn btn-success btn-lg btn-block text-dark font-weight-bold">Submit</button>
+    </div>
+  </body>
+
+    <script>
+      var genres = [
+        "acoustic",
+        "afrobeat",
+        "alt-rock",
+        "alternative",
+        "ambient",
+        "anime",
+        "black-metal",
+        "bluegrass",
+        "blues",
+        "bossanova",
+        "brazil",
+        "breakbeat",
+        "british",
+        "cantopop",
+        "chicago-house",
+        "children",
+        "chill",
+        "classical",
+        "club",
+        "comedy",
+        "country",
+        "dance",
+        "dancehall",
+        "death-metal",
+        "deep-house",
+        "detroit-techno",
+        "disco",
+        "disney",
+        "drum-and-bass",
+        "dub",
+        "dubstep",
+        "edm",
+        "electro",
+        "electronic",
+        "emo",
+        "folk",
+        "forro",
+        "french",
+        "funk",
+        "garage",
+        "german",
+        "gospel",
+        "goth",
+        "grindcore",
+        "groove",
+        "grunge",
+        "guitar",
+        "happy",
+        "hard-rock",
+        "hardcore",
+        "hardstyle",
+        "heavy-metal",
+        "hip-hop",
+        "holidays",
+        "honky-tonk",
+        "house",
+        "idm",
+        "indian",
+        "indie",
+        "indie-pop",
+        "industrial",
+        "iranian",
+        "j-dance",
+        "j-idol",
+        "j-pop",
+        "j-rock",
+        "jazz",
+        "k-pop",
+        "kids",
+        "latin",
+        "latino",
+        "malay",
+        "mandopop",
+        "metal",
+        "metal-misc",
+        "metalcore",
+        "minimal-techno",
+        "movies",
+        "mpb",
+        "new-age",
+        "new-release",
+        "opera",
+        "pagode",
+        "party",
+        "philippines-opm",
+        "piano",
+        "pop",
+        "pop-film",
+        "post-dubstep",
+        "power-pop",
+        "progressive-house",
+        "psych-rock",
+        "punk",
+        "punk-rock",
+        "r-n-b",
+        "rainy-day",
+        "reggae",
+        "reggaeton",
+        "road-trip",
+        "rock",
+        "rock-n-roll",
+        "rockabilly",
+        "romance",
+        "sad",
+        "salsa",
+        "samba",
+        "sertanejo",
+        "show-tunes",
+        "singer-songwriter",
+        "ska",
+        "sleep",
+        "songwriter",
+        "soul",
+        "soundtracks",
+        "spanish",
+        "study",
+        "summer",
+        "swedish",
+        "synth-pop",
+        "tango",
+        "techno",
+        "trance",
+        "trip-hop",
+        "turkish",
+        "work-out",
+        "world-music"
+      ];
+      var option = "";
+      for (var i = 0; i < genres.length; i++) {
+        option +=
+          '<option value="' + genres[i] + '">' + genres[i] + "</option>";
+      }
+      $("#q1").append(option);
+      $("#q2").append(option);
+      $("#q3").append(option);
+
+      $(document).ready(function() {
+        $(document).on("click", "#submitQuiz", function(event) {
+          event.preventDefault();
+          var Question1 = $("#q1").val().trim();
+          var Question2 = $("#q2").val().trim();
+          var Question3 = $("#q3").val().trim();
+          var Question4 = $("#q4").val().trim();
+          var Question5 = $("#q5").val().trim();
+          var Question6 = $("#q6").val().trim();
+          var Question7 = $("#q7").val().trim();
+          var Question8 = $("#q8").val().trim();
+          var Question9 = $("#q9").val().trim();
+          var Question10 = $("#q10").val().trim();
+          var Question11 = $("#q11").val().trim();
+          var Question12 = $("#q12").val().trim();
+
+          var currentUser = localStorage.getItem("currentUser");
+
+          var usernameInput = currentUser;
+
+          var newQuiz = {
+            username: usernameInput,
+            Question1: Question1,
+            Question2: Question2,
+            Question3: Question3,
+            Question4: Question4,
+            Question5: Question5,
+            Question6: Question6,
+            Question7: Question7,
+            Question8: Question8,
+            Question9: Question9,
+            Question10: Question10,
+            Question11: Question11,
+            Question12: Question12
+          };
+
+          submitQuiz(newQuiz);
+          alert("Account successfully created. Please log into the start page. redirecting...")
+          window.location.href = "/";
+  });
+
+  function submitQuiz(Quiz) {
+    $.post("/spotAFriends/quizAnswers", Quiz, function() {
+
+    });
+  }
+});
+  </script>
+</html>
