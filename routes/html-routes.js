@@ -31,4 +31,8 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../Public/home.html"));
   });
 
+  app.get("/matches", function(req, res) {
+    res.sendFile(path.join(__dirname, "../Public/matching.html"));
+  });
+
 };

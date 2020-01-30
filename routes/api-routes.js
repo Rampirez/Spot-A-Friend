@@ -81,6 +81,26 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/spotAFriends/quizAnswers/my/:username", function(req, res) {
+    db.quizAnswers.findAll({
+      where: {
+        username: {
+          [db.Sequelize.Op.not]: req.params.username
+        }
+      }
+    }).then(function(data) {
+      console.log(data);
+      res.json(data);
+    });
+  });
+
+  app.get("/spotAFriends/quizAnswers/:username", function(req, res) {
+    db.quizAnswers.findAll({where: {username: req.params.username}}).then(function(data) {
+      console.log(data);
+      res.json(data);
+    });
+  });
+
 
   //GET Route to login from the start page
   app.get("/spotAFriends/users/:username/:password", function(req, res) {
